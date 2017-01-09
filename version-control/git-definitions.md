@@ -11,4 +11,4 @@ A commit is producing a type of save point for the project. This save point can 
 * What is a merge conflict?
 A merge conflict is when there is a change to the same file done by multiple people producing conflict in which Git is unable to distinguish which merge change to commit to. 
 
-**GITHUB**
+**TAGLINE**
