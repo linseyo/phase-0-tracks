@@ -9,9 +9,14 @@ cite {
   margin-top: 10px;
 }
 
-#external-links ul {
+#external-links  {
   list-style-type: none;
   padding-left: 0px;
+  width: 200px;
+  display: table-cell;
+  vertical-align: top;
+  
+
 }
 
 /* you're welcome to edit the
@@ -33,4 +38,12 @@ figcaption {
 
 body {
   width: 960px;
+}
+
+main {
+
+  width: 756px;
+  display: table-cell;
+  vertical-align: top;
+  
 }
