@@ -1,0 +1,38 @@
+Release 0 Equip Your New Robot -Elevator Task:
+
+-Move forward until elevator up and down buttons are reached
+-If going up:
+	-Press Up arrow button
+-Otherwise:
+	-Press Down arrow button
+-Wait for elevator doors to open
+-Enter elevator once doors open
+-Turn towards numerical buttons
+-Sort numbers from 1-40 
+	-Numbers are sorted from decreasing manner starting at the top with 40
+	-Largest number 40 is placed on top right
+	-Minus 1 from previous number
+	-Next button is place to the left until three buttons are located side by side
+	-Next button will make a new row directly below previous button on the far right
+	-Continue until all numbers are processed
+-If “X” is displayed (“X” is desired floor number)
+	-then press “X”
+-Otherwise: 
+	-Exit Elevator
+
+
+
+Release 1 Waking Up In The Morning (Alarm Process):
+
+When alarm goes off:
+	-If 05:30:00 AM:
+		-Hits snooze button
+		-Continue to sleep until alarm goes off again after 05:31:00AM
+
+-When alarm goes off past 5:31:00 AM
+	-If it is a weekday:
+		-Jumps out of bed
+		-Run to the bathroom
+	-Otherwise:
+		-Continue to sleep
+
