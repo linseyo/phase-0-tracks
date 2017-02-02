@@ -45,7 +45,8 @@ edit = gets.to_sym
 puts "What changes need to be made?"
 changes = gets.chomp 
 
-# p application[edit] = changes <--- use to view changes to hash
+puts application[edit] = changes 
+# <--- use to view changes to hash
 
 puts application
 puts "Thanks for fillin' this out!"
