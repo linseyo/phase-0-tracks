@@ -54,7 +54,7 @@ p oscar_winners
 
 # Use .map
 
-oscar_winners.map! do |year, film|
+oscar_winners.map do |year, film|
 	puts film.upcase
 	film.upcase
 end
