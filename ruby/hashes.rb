@@ -39,14 +39,21 @@ application [:floors] = gets.chomp
 puts application
 
 #update hash
-puts "Do you need to make any edits to a particular section, which section?"
-edit = gets.to_sym
+puts "Do you need to make any edits to a particular section? (yes or none) "
+answer = gets.chomp
 
-puts "What changes need to be made?"
-changes = gets.chomp 
+if answer == "yes"
+	puts "which section?"
+	edit = gets.to_sym
+	puts "What changes need to be made?"
+	changes = gets.chomp 
+else answer == "none"
+	puts "Awesome!"
+end
 
-puts application[edit] = changes 
-# <--- use to view changes to hash
+
+puts application[edit] = changes  # <--- use to view changes to hash
+
 
 puts application
 puts "Thanks for fillin' this out!"
