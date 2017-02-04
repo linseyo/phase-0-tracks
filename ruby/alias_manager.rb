@@ -15,19 +15,25 @@ user_name = gets.chomp
 # user_name.split(' ')
 
 #Store split strings into array
+#swap the two strings (.reverse
+name_swap_storage = user_name.split(' ')
+name_swap_storage.reverse!
 
-name_storage = user_name.split(' ')
-#swap the two strings (.reverse_each)
-swap_name = ""
-name_storage.reverse_each { |name_storage| swap_name += "#{name_storage} " }
-p swap_name
+
+# swap_name = ""
+# name_swap_storage.reverse_each { |name_swap_storage| swap_name += "#{name_swap_storage} " }
+# p swap_name
 
 
 #produce method for switching vowels
-user_name.chars 
-	if "a","e","i","o","u"
+alias_name.class
+alias_name.map! { |vowel| vowel.tr("aeiou", "eioua")}
+#p alias_name
 
 #produce methods for switching consonants
+
+alias_name.map! { |const| const.tr("bcdfghjklmnpqrstvwxyz", "cdfghjklmnpqrstvwxyzb")}
+
 #combine new first and last name 
 #print out new name 
 
