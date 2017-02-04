@@ -44,7 +44,7 @@ answer = gets.chomp
 
 if answer == "yes"
 	puts "which section?"
-	edit = gets.to_sym
+	edit = gets.chomp.to_sym
 	puts "What changes need to be made?"
 	changes = gets.chomp 
 else answer == "none"
