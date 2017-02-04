@@ -18,22 +18,22 @@ puts "Welcome Interior Designers, Please enter Client info"
 application = Hash.new
 
 puts "What is your clients name?"
-application [:name] = gets.chomp
+application [:"name"] = gets.chomp
 
 puts "What is their age?"
-application [:age] = gets.chomp
+application [:"age"] = gets.chomp
 
 puts "How many kids do they have?"
-application [:number_of_kids] = gets.chomp
+application [:"number_of_kids"] = gets.chomp
 
 puts "Prefered decor theme"
-application [:decor_theme] = gets.chomp
+application [:"decor_theme"] = gets.chomp
 
-puts "What type of pets do you have?"
-application [:pets] = gets.chomp
+# puts "What type of pets do you have?"
+# application [:"pets"] = gets.chomp
 
-puts "Do you prefer carpet or hardwood floors"
-application [:floors] = gets.chomp
+# puts "Do you prefer carpet or hardwood floors"
+# application [:"floors"] = gets.chomp
 
 #prints hash
 puts application
@@ -44,7 +44,7 @@ answer = gets.chomp
 
 if answer == "yes"
 	puts "which section?"
-	edit = gets.to_sym
+	edit = gets.chomp.to_sym
 	puts "What changes need to be made?"
 	changes = gets.chomp 
 else answer == "none"
@@ -53,7 +53,6 @@ end
 
 
 puts application[edit] = changes  # <--- use to view changes to hash
-
 
 puts application
 puts "Thanks for fillin' this out!"
