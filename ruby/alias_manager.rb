@@ -44,7 +44,6 @@ name_generator = Array.new
 
 
 # Produce hash in which key = original user input name & value = alias generated name
-
 name_generator << [user_name, alias_name]
 name_generator.each do |user_name, alias_name|
 	puts "#{user_name.capitalize} is actually #{alias_name.capitalize} "
