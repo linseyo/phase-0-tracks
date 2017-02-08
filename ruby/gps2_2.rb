@@ -85,6 +85,13 @@ end
   add_item_to_list(linsey_list,'Tomatoe',3)
   add_item_to_list(linsey_list,'Onion')
   add_item_to_list(linsey_list,'Ice Cream',4)
+  puts "-----------" 
+  print_list(linsey_list)
+  puts "-----------"
+  remove_item(linsey_list, 'Lemonade')
+  print_list(linsey_list)
+  puts "-----------"
+  update_quantity(linsey_list, 'Ice Cream', 1)
   print_list(linsey_list)
 
 
