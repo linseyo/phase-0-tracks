@@ -4,10 +4,10 @@ class Santa
 
 
 	def initialize(gender,ethnicity,origin,age,beard)
-		@gender = gender
-		@ethnicity = ethnicity
-		@origin = origin
-		@age = 0
+		@gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+		@ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+		@origin = ["Japan","South Korea","Bali","London","Hawaii","Canada","North Pole", "N/A"]
+		@age = [0,4,6,22,44,55,45,67,56,68,98,100,123,130,140,18,78]
 		@beard = beard
 		print "Initializing Santa instance..."
 	end
@@ -41,27 +41,31 @@ class Santa
 	end
 
 	def ethnicity_randomizer
-		@ethnicity = example_ethnicities.sample
+		@ethnicity = @ethnicity.sample
 	end
 
-	def gender_randomizer
-		@gender = example_genders.sample
+	def gender_randomizer(gender)
+		@gender = @gender.sample
 	end
 
-	def origin_randomizer
-		@origin = origin_details.sample
+	def origin_randomizer(origin)
+		@origin = @origin.sample
 	end
 
-	def age_randomizer
-		@age = age_variation.sample(random:rng)
+	def age_randomizer(age)
+		@age = @age.sample
 	end
 	# def get_mad_at(reindeer_name)
 	# 	@reindeer_ranking_array.each_index do |find_reindeer| 
 	# 	find_reindeer == reindeer_name 
 	# 	@reindeer_ranking_array.insert(-1, reindeer_ranking_array.delete_at(find_reindeer))
 	# end
-
 end
+
+# example_genders = .sample
+# example_ethnicities = .sample
+# origin_details = ["Japan","South Korea","Bali","London","Hawaii","Canada","North Pole", "N/A"].sample
+# age_variation = [0,4,6,22,44,55,45,67,56,68,98,100,123,130,140,18,78].sample(random:rng)
 
 # Boss = Santa.new("female","asian","Korea",0)
 
@@ -74,18 +78,24 @@ end
 # Boss.celebrate_birthday(5)
 
 # santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-origin_details = ["Japan","South Korea","Bali","London","Hawaii","Canada","North Pole", "N/A"]
-age_variation = [0,4,6,22,44,55,45,67,56,68,98,100,123,130,140,18,78]
 # example_genders.length.times do |i|
 #   santas = Santa.new(example_genders[i], example_ethnicities[i], origin_details[i], age_variation[i])
 # end
-5.times do 
-	Santaz = Santa.new
-end
 
-puts "I am a #{santas.gender}, from #{santas.origin} but I am #{santas.age} and I am #{santas.ethnicity}"
+# 5.times do 
+	Santaz = Santa.new(@gender, @ethnicity, @origin, @age, @beard)
+# end
+
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+puts "I am a #{Santaz.gender.sample}, from #{Santaz.origin.sample} but I am #{Santaz.age.sample} and I am #{Santaz.ethnicity.sample}"
+
 
 
 # puts "#{santas.age} is not equal to #{santas.ethnicity}"
