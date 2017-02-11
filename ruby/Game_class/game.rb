@@ -31,6 +31,7 @@ class Game
 		@secrect_word = word.downcase
 		@number_of_guesses = word.length
 		@print_word = "_" * word.length
+	end 
 
 	def guess_progress(letters_guessed)
 		display_progress = ''
