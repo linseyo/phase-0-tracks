@@ -8,7 +8,7 @@ describe Game do
 		game = Game.new
 		expect(game.guess_progress('e')).to eq 'e'
 	end
-
+ 
 	it "prints out taunting message" do
 		game = Game.new
 		expect(game.failure).to eq 'Sorry you lose'
