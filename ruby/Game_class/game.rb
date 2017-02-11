@@ -26,16 +26,30 @@
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
 class Game
-	attr_accessor :secrect_word
+	attr_reader :print_word :number_of_guesses
+	attr_accessor :secrect_word :letters_guessed
+
 	def initialize(word)
 		@secrect_word = word.downcase
 		@number_of_guesses = word.length
 		@print_word = "_" * word.length
+		@letters_guessed = letters_guessed
 	end 
+
+	def guess_begin(letters_guessed)
+		until @number_of_guesses == 0 
+			puts "Please guess a letter"
+			letters_guessed = gets.chomp
+			if attempted_letters.include? letters_guessed
+				puts "You already guessed that letter, try again"
+				letters_guessed = gets.chomp
+			end
+		attempted_letters << letters_guessed
+	end
 
 	def guess_progress(letters_guessed)
 		display_progress = ''
-		@secret_word.chars.each  do |letter| 
+		@secret_word.split("").each  do |letter| 
 			if letters_guessed.include?(letter)
 				display_progress << letter
 			else
@@ -61,6 +75,11 @@ puts "Player 1: Enter the Word Below:"
 word = gets.chomp
 
 game = Game.new(word)
+
+attempted_letters = []
+
+puts "Player 2, please guess a letter:"
+letters_guessed = gets.chomp
 
 
 
