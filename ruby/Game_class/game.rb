@@ -26,8 +26,8 @@
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
 class Game
-	attr_reader :print_word :number_of_guesses
-	attr_accessor :secrect_word :letters_guessed
+	attr_reader :print_word, :number_of_guesses
+	attr_accessor :secrect_word, :letters_guessed
 
 	def initialize(word)
 		@secrect_word = word.downcase
@@ -57,6 +57,16 @@ class Game
 			end
 		end
 		display_progress
+	end
+
+	def attempt_progress
+		if word.length == 0 
+	end 
+
+	def win
+		if @secrect_word == @print_word
+			congrats
+		end
 	end
 
 # End with a congratulatory message if WIN
