@@ -1,10 +1,10 @@
 # Pseudocode for Game Class
-class Game
+class Game_class
 # Create a Game where:
 # User 1 enters a word
 # User 2 attempts to guess the word
-	attr reader :number_of_chances
-	attr accessor :secret_word
+	# attr reader :number_of_chances
+	# attr accessor :secret_word
 
 	def initialize(word)
 		@secret_word = word 
