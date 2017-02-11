@@ -25,14 +25,11 @@
 # 	After each guess, print out the current state of the word
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
-
-
-
-
-
 class Game
 
-
+	def initialize(word)
+		@secrect_word = word
+		@number_of_guesses = word.length
 
 # End with a congratulatory message if WIN
 	def congrats
@@ -43,3 +40,7 @@ class Game
 		p "Sorry you lose"
 	end
 end
+
+
+
+
