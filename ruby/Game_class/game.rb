@@ -26,50 +26,69 @@
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
 class Game
-	attr_reader :print_word, 
-	attr_accessor :secret_word, :attempted_leters, :number_of_guesses
+	attr_reader
+	attr_accessor :secret_word, :attempted_leters, :number_of_guesses, :display
 
 	def initialize(word)
 		@secret_word = word.downcase.split("")
 		@number_of_guesses = @secret_word.length
+		@display = " _" * @secret_word.length
 		@attempted_letters = []
 	end 
-
-	def guess_progress(letter)
-		display_progress = ''
-		@secret_word.each  do |aplhabet| 
-			if @attempted_letters.include?(alphabet)
-				display_progress << alphabet
-			else
-				display_progress = '_'
-			end
-		end
-		display_progress
-	end
-
-	def guessing (letter)
-			until @number_of_guesses == 0 
-				p "Please guess a letter, you have #{@number_of_guesses}!"
-				if @secret_word.include? letter
-					guess_progress
-					@attempted_letters << letter
-					@number_of_guesses -= 1
-				elsif @attempted_letters.include? letter
-					p "You already guessed that letter, try again"
-					guess_progress
-				else 
-					p "Guess again, #{letters} is incorrect"
-					@attempted_letters << letter
-					@number_of_guesses -= 1
+# Let user enter a letter, check if letter exists, if it does print out the progress
+	def guess_correct(letter)
+		if @secret_word.include?(letter)
+			@secret_word.each_with_index do |correct, index|
+			if letter == correct
+				@display[2*index+1] = letter
+				puts @display
+				@attempted_letters << letter
 				end
-			p "There are #{@number_of_guesses} left..."
-
 			end
+			@number_of_guesses -= 1
+			return true
+		else 
+			return false
+		end 
 	end
 
-	def win
-		if @secrect_word == @print_word
+# Method for repeat letter guesses
+	def repeat_guess(letter)
+		if @attempted_letters.include?(letter)
+			puts "you already guessed that..."
+			return true
+		end
+		return false
+	end
+
+# Method for wrong letter guess
+	def wrong_guess(letter)
+		if !@attempted_letters.include?(letter)
+			puts "WRONG...."
+			@attempted_letters << letter
+			@number_of_guesses -= 1 
+			p @number_of_guesses
+			p @display
+			p "you have #{@number_of_guesses} guesses left..."
+			return true
+		end
+	end
+# Method combine all three guessing platforms
+# Include method to determine win? 
+
+	def guessing_for_the_win(letter)
+		if repeat_guess(letter)
+		elsif guess_correct(letter)
+		else wrong_guess(letter)
+		end 
+
+		if @secret_word == @display
 			congrats
+		elsif @number_of_guesses > 0 
+
+			p "Keep guessing"
+		else
+			failure
 		end
 	end
 
@@ -83,16 +102,21 @@ class Game
 	end
 end
 
+
 puts "Want to play a game?"
+puts "------------------------------------------------"
 puts "Player 1 will enter a word & Player 2 will try to guess the word by typing a letter"
 puts "Player 1: Enter the Word Below:"
 word = gets.chomp
 
 game = Game.new(word)
 
-puts "Player 2, you have #{game.number_of_guesses}, please guess a letter:"
-letter = gets.chomp
-game.guessing(letter)
+until game.number_of_guesses == 0 
+puts "Player 2, you have #{game.number_of_guesses}, please guess a letter:"	
+	letter = gets.chomp
+	game.guessing_for_the_win(letter)
+	p game.number_of_guesses
+end
 
 
 
