@@ -4,9 +4,11 @@ require_relative 'game'
 
 describe Game do
 
+	# let(:game) {game.new("duck")}
+
 	it "displays the letters guessed" do
 		game = Game.new
-		expect(game.guess_progress('e')).to eq 'e'
+		expect(game.correct_guess('k')).to eq 'k'
 	end
  
 	it "prints out taunting message" do
