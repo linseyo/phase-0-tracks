@@ -26,32 +26,20 @@
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
 class Game
-	attr_reader :print_word, :number_of_guesses
-	attr_accessor :secrect_word, :letters_guessed
+	attr_reader :print_word, 
+	attr_accessor :secret_word, :attempted_leters, :number_of_guesses
 
 	def initialize(word)
-		@secrect_word = word.downcase
-		@number_of_guesses = word.length
-		@print_word = "_" * word.length
-		@letters_guessed = letters_guessed
+		@secret_word = word.downcase.split("")
+		@number_of_guesses = @secret_word.length
+		@attempted_letters = []
 	end 
 
-	def guess_begin(letters_guessed)
-		until @number_of_guesses == 0 
-			puts "Please guess a letter"
-			letters_guessed = gets.chomp
-			if attempted_letters.include? letters_guessed
-				puts "You already guessed that letter, try again"
-				letters_guessed = gets.chomp
-			end
-		attempted_letters << letters_guessed
-	end
-
-	def guess_progress(letters_guessed)
+	def guess_progress(letter)
 		display_progress = ''
-		@secret_word.split("").each  do |letter| 
-			if letters_guessed.include?(letter)
-				display_progress << letter
+		@secret_word.each  do |aplhabet| 
+			if @attempted_letters.include?(alphabet)
+				display_progress << alphabet
 			else
 				display_progress = '_'
 			end
@@ -59,9 +47,25 @@ class Game
 		display_progress
 	end
 
-	def attempt_progress
-		if word.length == 0 
-	end 
+	def guessing (letter)
+			until @number_of_guesses == 0 
+				p "Please guess a letter, you have #{@number_of_guesses}!"
+				if @secret_word.include? letter
+					guess_progress
+					@attempted_letters << letter
+					@number_of_guesses -= 1
+				elsif @attempted_letters.include? letter
+					p "You already guessed that letter, try again"
+					guess_progress
+				else 
+					p "Guess again, #{letters} is incorrect"
+					@attempted_letters << letter
+					@number_of_guesses -= 1
+				end
+			p "There are #{@number_of_guesses} left..."
+
+			end
+	end
 
 	def win
 		if @secrect_word == @print_word
@@ -86,10 +90,10 @@ word = gets.chomp
 
 game = Game.new(word)
 
-attempted_letters = []
+puts "Player 2, you have #{game.number_of_guesses}, please guess a letter:"
+letter = gets.chomp
+game.guessing(letter)
 
-puts "Player 2, please guess a letter:"
-letters_guessed = gets.chomp
 
 
 
