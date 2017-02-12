@@ -26,7 +26,7 @@
 # 	Output: Use _ to represent letters that have not been guessed (_ _ x _ o _)
 
 class Game
-	attr_reader
+	# attr_reader
 	attr_accessor :secret_word, :attempted_leters, :number_of_guesses, :display
 
 	def initialize(word)
@@ -58,7 +58,7 @@ class Game
 			puts "you already guessed that..."
 			return true
 		end
-		return false
+			return false
 	end
 
 # Method for wrong letter guess
