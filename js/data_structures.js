@@ -14,7 +14,7 @@ names.push("Ollie");
 //create a hash that will produce a 1:1 for each array
 //two arrays should create an object...?
 
-// for (var j = 0; j < colors.length-1; j++) {
+// for (var j = 0; j < colors.length; j++) {
 // }
 	 var horse = {};
 	for (var i = 0; i < names.length; i++) {
