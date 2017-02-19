@@ -10,14 +10,16 @@ var word_array = ["house", "chicken", "egg", "airplane"]
 	// determine from those lengths which is the longest
 function wordlengths(arr) {
 	var longest_word = ""
-
+	var longest_length = 0
 // Iterate through the array and determine the length of each word/phrase in the array
 	for (var i = 0; i < arr.length; i++) {
-		if (arr[i].length > 0 ) {
-			longest_word = arr[i];
+		if (arr[i].length > length ) {
+			longest_length = arr[i].length;
+			longest_word = arr[i]
 		}
-		console.log(longest_word)
+		
 	} 
+	console.log(longest_word)
 }
 
 wordlengths(word_array);
