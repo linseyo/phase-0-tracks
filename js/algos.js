@@ -30,22 +30,26 @@ var set4 = {name: "Bill", age: 34}
 			// Test for various keys-value matches
 //Function will take 2 objects
 function matchpair(var1, var2) {
-	if (var1[0] == var2[0] || var1[1] == var2[1]) {
-		// console.log("true");
+// Check if objects share at least one key-value pair
+	// if (var1[0] == var2[0] || var1[1] == var2[1]) {
+	if (var1 == var2) {
+		console.log("true");
+	//return true for a match
 		return true;
-		
 	}
 	else {
-		// console.log("false")
+		console.log("false")
+	//Otherwise return false
 		return false;
-		
 	}
 }
 
-matchpair(set1, set3)
-//Check if objects share at least one key-value pair
-//return true for a match
-//Otherwise return false
+//matchpair(set1, set3)
+//matchpair(set2, set4)
+matchpair(set1, set4)
+
+
+
 
 
 ////////////////////////////////////////
