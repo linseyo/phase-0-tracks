@@ -1,9 +1,4 @@
 // Release 0: Find the Longest Phrase
-
-	
-	
-
-
 // Input: array of words or phrases
 var word_array = ["house", "chicken", "egg", "airplane"]
 // Function will take in the array of phrases/words
@@ -21,21 +16,35 @@ function wordlengths(arr) {
 	} 
 	console.log(longest_word)
 }
-
+// Output: the longest word or phrase in the array
 wordlengths(word_array);
 
-// Output: the longest word or phrase in the array
-
-
+/////////////////////////////////////////
 
 //Release 1: Find a Key-Value Match
+//Input: Key-Value Pair Objects
+var set1 {name: John, age: 23}
+var set2 {name: Jack, age: 34}
+var set3 {name: John, age: 55}
+var set4 {name: Bill, age: 34}
+			// Test for various keys-value matches
 //Function will take 2 objects
+function matchpair(var1, var2) {
+	if (var1 == var2) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+matchpair(set1, set3)
 //Check if objects share at least one key-value pair
 //return true for a match
 //Otherwise return false
 
 
-
+////////////////////////////////////////
 //Release 2: Generate Random Test Data
 //Input: an integer for length
 //Builds an array
