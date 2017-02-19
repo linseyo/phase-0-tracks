@@ -54,14 +54,26 @@ for (var i in var1) {
 ////////////////////////////////////////
 //Release 2: Generate Random Test Data
 //Input: an integer for length
-function wordgenerator(num) {
-
+//function should: take in integer
+var randomword = function wordgenerator(num) {
+//use alphabet to pull letters from to build word
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+// use empty string to store word
+	var word = "";
+	word_storage = []
+// push word into the empty array
+	for (var w = 0; w < Math.floor((Math.random() * 10) + 1); w++) {
+		word += alphabet.char[w]
+	}
+	return word;
 }
-	
-//Builds an array of words
-//Words should be of varying length
-//Returns an array of strings based on the integer length
 
+//Words should be of varying length
+//Builds an array of the words made 
+//Returns the array 
+
+//EXAMPLE:
+	//Input 3 --> Array of 3 random words
 
 
 
@@ -80,3 +92,4 @@ matchpair(set1, set4)
 	//feeds array to wordslengths function
 	//prints results
 
+console.log(randomword(3))
