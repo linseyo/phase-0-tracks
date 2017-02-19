@@ -24,18 +24,21 @@ function wordlengths(arr) {
 var set1 = {name: "John", age: 23}
 var set2 = {name: "Jack", age: 34}
 var set3 = {name: "John", age: 55}
-var set4 = {name: "Bill", age: 34, gender: "male"}
+var set4 = {name: "Bill", age: 34}
 			// Test for various keys-value matches
 //Function will take 2 objects
 function matchpair(var1, var2) {
 // Check if objects share at least one key-value pairs
-	if (var1 == var2) {
-		console.log("true");
-		return true;
-	}
+//Iterate through objects to find a match:
+for (var i in var1) {
+	// if (var1 == var2) {
+	// 	console.log("true");
+	// 	return true;
+	// }
 		// This Conditional statement returns TRUE for all...
-	else if (var1[0] === var2[0] || var1[1] === var2[1]) {
+	// if (var1[0] === var2[0] || var1[1] === var2[1]) {
 		// This conditional statement will return FALSE for all...
+	if (var1[i] == var2[i]) {
 		console.log("true");
 	// //return true for a match
 		return true;
@@ -44,6 +47,7 @@ function matchpair(var1, var2) {
 		console.log("false")
 	// //Otherwise return false
 		return false;
+	}
 	}
 }
 
