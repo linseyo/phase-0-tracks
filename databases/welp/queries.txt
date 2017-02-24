@@ -1,0 +1,22 @@
+Release 2 Queries: 
+
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY, 
+stars INTEGER,
+comment VARCHAR(255),
+businesses_id INT, 
+users_id INT, 
+FOREIGN KEY (businesses_id) REFERENCES businesses(id),
+FOREIGN KEY (users_id) REFERENCES users(id)
+);
+
+
+SELECT users.first_name, reviews.stars, reviews.comment, businesses.name FROM reviews JOIN users, businesses ON reviews.users_id = users.id WHERE businesses.id = reviews.businesses_id;
+
+Mandy|5|Awesome Pizza|The Beagle Nightclub
+Steven|3|Okay Service|JoeBob's Sportz Barn
+Angela|5|Great sushi, best in town|Sushi World
+
+SELECT * FROM reviews JOIN users, businesses ON reviews.users_id=users.id WHERE reviews.businesses_id=businesses.id AND businesses.id=3; 
+
+1|5|Awesome Pizza|3|2|2|Mandy|Kaling|3|The Beagle Nightclub
