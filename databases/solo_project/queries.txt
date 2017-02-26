@@ -1,0 +1,41 @@
+1.  SELECT * FROM  store_items;
+1|Sweet Pea Fine Fragrance Mist|14|True|1
+2|Rainforest Gardenia|22|True|7
+3|Lavendar Chamomile Candle|22|False|6
+4|Noir Cologne|30|True|3
+5|Kitchen Lemon Foaming Hand Soap|10|True|2
+6|Twisted Peppermit|2|False|8
+
+2. UPDATE store_items SET price=7 WHERE product_name="Kitchen Lemon Foaming Hand Soap";
+
+3.SELECT * FROM store_items, department WHERE store_items.dept_id = department.id;
+
+1|Sweet Pea Fine Fragrance Mist|14|True|1|1|Body
+2|Rainforest Gardenia|22|True|7|7|Candles
+3|Lavendar Chamomile Candle|22|False|6|6|Aromatherapy
+4|Noir Cologne|30|True|3|3|Mens
+5|Kitchen Lemon Foaming Hand Soap|7|True|2|2|Hand Soap
+6|Twisted Peppermit|2|False|8|8|Hand Sanitizer
+
+4. SELECT store_items.product_name, department.department_name FROM store_items JOIN department ON store_items.dept_id = department.id;
+
+Sweet Pea Fine Fragrance Mist|Body
+Rainforest Gardenia|Candles
+Lavendar Chamomile Candle|Aromatherapy
+Noir Cologne|Mens
+Kitchen Lemon Foaming Hand Soap|Hand Soap
+Twisted Peppermit|Hand Sanitizer
+
+5. DELETE FROM department WHERE department_name = "Co Bigelow";
+
+
+Joins: 
+
+SELECT store_items.product_name, store_items.price FROM store_items JOIN department ON store_items.dept_id = department.id;
+
+Sweet Pea Fine Fragrance Mist|14
+Rainforest Gardenia|22
+Lavendar Chamomile Candle|22
+Noir Cologne|30
+Kitchen Lemon Foaming Hand Soap|7
+Twisted Peppermit|2
