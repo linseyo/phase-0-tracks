@@ -1,5 +1,8 @@
 # Korean Skincare Recommendation App
-
+# Produce three databases that will be accessed via user input (numbers)
+# Return a recommended product based on the id number that relate to the user input 
+# i.e: User input 1 for skin type (dry) & 3 for brand preference (skinfood)
+# a product that is for dry skin from Skinfood for that given skincare step will get returned.
 # -->Required Gems 
 
 
@@ -43,10 +46,15 @@ cr_brand_type_options = <<-SQL
 	)
 SQL
 
+# Create table
+
 # --> Create table (execute)
 kordb.execute(cr_recommended_products)
 kordb.execute(cr_skin_type_options)
 kordb.execute(cr_brand_type_options)
+
+# INSERT Skin_ 
+
 
 
 
