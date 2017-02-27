@@ -24,8 +24,10 @@ cr_recommended_products = <<-SQL
 		description VARCHAR(255),
 		brand_id INT, 
 		stype_id INT, 
-		FOREIGN KEY (brand_id) REFERENCES brands(id)
-		FOREIGN KEY (stype_id) REFERENCES skintype(id)
+		step_id INT,
+		FOREIGN KEY (brand_id) REFERENCES brands(id),
+		FOREIGN KEY (stype_id) REFERENCES skintype(id),
+		FOREIGN KEY (step_id) REFERENCES step(id)
 	)
 SQL
 
@@ -46,7 +48,13 @@ cr_brand_type_options = <<-SQL
 	)
 SQL
 
-# Create table
+# Create table that houses each step of the skincare process
+cr_skincare_step = <<-SQL
+	CREATE TABLE IF NOT EXISTS step(
+	id INT PRIMARY KEY, 
+	steps VARCHAR (255)
+	)
+SQL
 
 # --> Create table (execute)
 kordb.execute(cr_recommended_products)
