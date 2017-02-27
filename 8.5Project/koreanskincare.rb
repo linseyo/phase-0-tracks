@@ -4,15 +4,12 @@
 # i.e: User input 1 for skin type (dry) & 3 for brand preference (skinfood)
 # a product that is for dry skin from Skinfood for that given skincare step will get returned.
 # -->Required Gems 
-
-
-
+require 'sqlite3'
 
 
 # -->Initialize Database(s)
 kordb = SQLite3::Database.new("KoSkincare.db")
-
-
+kordb.results_as_hash = true
 
 # -->SQL Commands
 # Create Table that will house recommended products for the user
@@ -61,8 +58,12 @@ kordb.execute(cr_brand_type_options)
 kordb.execute(cr_skincare_step)
 
 # Insert Skin Type into Table 
+insert_skin_types = <<-SQL
+	INSERT 
+
+SQL
 def skin_type_table(type)
-	kordb.execute("INSERT INTO skintype (type) VALUES ('Dry')")
+	kordb.execute(insert_skin_types)
 end
 
 
@@ -87,6 +88,11 @@ puts "Awesome! And last, do you have a brand preference? (1-COSRX, 2-Innisfree, 
 puts "---------------------------"
 puts "Fantastic! Here is what we recommend: "
 recommendation = kordb.execute("SELECT name FROM rec_prod WHERE rec_prod.brand_id = brands.id AND rec_prod.stype_id = skintype.id AND rec_prod.step.id = step.id ")
+recommendation.each do |rec|
+	puts "#{recommendation['name']}!"
+end
+
+
 
 
 
