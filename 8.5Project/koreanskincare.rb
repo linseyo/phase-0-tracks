@@ -85,9 +85,8 @@ sstype = gets.chomp.to_i
 puts "---------------------------"
 puts "Awesome! And last, do you have a brand preference? (1-COSRX, 2-Innisfree, 3-Skinfood, 4-Neogen, 5-Klairs): "
 puts "---------------------------"
-
-recommendation = kordb.execute("SELECT ")
 puts "Fantastic! Here is what we recommend: "
+recommendation = kordb.execute("SELECT name FROM rec_prod WHERE rec_prod.brand_id = brands.id AND rec_prod.stype_id = skintype.id AND rec_prod.step.id = step.id ")
 
 
 
