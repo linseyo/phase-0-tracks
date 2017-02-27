@@ -20,5 +20,6 @@ Return Values:
 2. Holds all product recommendations 
 ...*There is 1 product that has 1 brand_id & 1 skintype_id
 3. Hods all skin type options (3)
+4. Holds each step of skincare process 
 
 
