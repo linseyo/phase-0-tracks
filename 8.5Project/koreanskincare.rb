@@ -20,8 +20,6 @@ cr_recommended_products = <<-SQL
 	CREATE TABLE IF NOT EXISTS rec_prod(
 		id INT PRIMARY KEY, 
 		name VARCHAR(255)
-		price INT, 
-		description VARCHAR(255),
 		brand_id INT, 
 		stype_id INT, 
 		step_id INT,
@@ -40,7 +38,7 @@ cr_skin_type_options = <<-SQL
 SQL
 
 
-# Create table that will house all the recommended brand types (10 different brands)
+# Create table that will house all the recommended brand types (5 different brands)
 cr_brand_type_options = <<-SQL
 	CREATE TABLE IF NOT EXISTS brands(
 	id INT PRIMARY KEY, 
@@ -60,8 +58,44 @@ SQL
 kordb.execute(cr_recommended_products)
 kordb.execute(cr_skin_type_options)
 kordb.execute(cr_brand_type_options)
+kordb.execute(cr_skincare_step)
 
-# INSERT Skin_ 
+# Insert Skin Type into Table 
+def skin_type_table(type)
+	kordb.execute("INSERT INTO skintype (type) VALUES ('Dry')")
+end
+
+
+
+
+
+
+
+
+# ---> USER INTERFACE <----
+puts "Annyong! Have you heard about the latest trend in Skincare? It's the Korean 10 Step Skincare!"
+puts "---------------------------"
+puts "We've got the best recommendations based on Step, Skintype and Brands for you."
+puts "---------------------------"
+puts "To get started please select a skincare step (1-10): "
+sstep = gets.chomp.to_i 
+puts "---------------------------"
+puts "Great and now, what is your Skin Type? (1-Dry, 2-Oily, 3-Combination): "
+sstype = gets.chomp.to_i 
+puts "---------------------------"
+puts "Awesome! And last, do you have a brand preference? (1-COSRX, 2-Innisfree, 3-Skinfood, 4-Neogen, 5-Klairs): "
+puts "---------------------------"
+
+recommendation = kordb.execute("SELECT ")
+puts "Fantastic! Here is what we recommend: "
+
+
+
+
+
+
+
+
 
 
 
