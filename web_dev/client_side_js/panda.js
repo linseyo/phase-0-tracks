@@ -7,4 +7,9 @@ function changeheader() {
 
 changeheader();
 
+function changep(event){
+	event.target.style.color = "Pink";
+}
 
+var para = document.getElementById("text");
+para.addEventListener("click", changep);
