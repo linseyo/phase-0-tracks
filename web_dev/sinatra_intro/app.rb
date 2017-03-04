@@ -44,3 +44,29 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+
+
+
+# Create a conact route
+get '/contact' do
+  "1230 Aloha Ave Apt#1 Honolulu, Hawaii 96818"
+end
+
+
+# Create a great_job route
+get '/great_job' do 
+  name = params[:name]
+  if name
+    "Good Job, #{name}"
+  else
+    "Good job!"
+  end
+end
+
+# Create a 2 number addition route
+get '/:num1/add/:num2' do
+  total = params[:num1].to_i + params[:num2].to_i
+  "#{params[:num1]} + #{params[:num2]} is equal to #{total}"
+end
+
